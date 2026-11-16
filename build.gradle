@@ -1,0 +1,25 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.18.4'
+}
+
+group = 'io.github.jemyz3653'
+version = '1.0.0+26.3'
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.5'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.163.0+26.3'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+jar {
+    manifest.attributes('Main-Class': 'io.github.jemyz3653.servermodguard.PendingUpdates')
+    from('LICENSE') { rename { 'LICENSE_servermodguard' } }
+}

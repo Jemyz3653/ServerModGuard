@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "servermodguard",
+  "version": "1.0.0",
+  "name": "Server Mod Guard",
+  "description": "Server-side Fabric channel checks and verified JAR updates.",
+  "authors": ["Jemyz3653"],
+  "environment": "server",
+  "license": "MIT",
+  "contact": {
+    "sources": "https://github.com/Jemyz3653/ServerModGuard",
+    "issues": "https://github.com/Jemyz3653/ServerModGuard/issues"
+  },
+  "entrypoints": {"server": ["io.github.jemyz3653.servermodguard.ServerModGuard"]},
+  "mixins": ["servermodguard.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "26.3",
+    "java": ">=25",
+    "fabric-networking-api-v1": "*",
+    "fabric-lifecycle-events-v1": "*"
+  }
+}
